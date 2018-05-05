@@ -4,9 +4,8 @@
     <!-- <span>{{user.displayName}}</span> -->
     <button @click = "logout">ログアウト</button>
     <div class="editorWrapper">
-      <textarea class="markdown" v-model = "markdown"></textarea>
+      <textarea class="markdown" v-model = "markdown" placeholder="テキストを入力すると、右側にプレビューが表示されます。"></textarea>
       <div class="preview" v-html = "preview()">
-
       </div>
     </div>
   </div>
