@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-      <Editor  v-if = "isLogin" :user="userData"></Editor>
+      <Editor  v-if = "isLogin" ></Editor>
+      <!-- <Editor  v-if = "isLogin" :user="userData"></Editor> -->
       <Home v-else ></Home>
   </div>
 </template>
@@ -13,22 +14,22 @@ export default {
   name: 'app',
   data () {
     return {
-      isLogin: false,
-      userData: null,
+      isLogin: true,
+      // userData: null,
     }
   },
-  created: function() {
-    firebase.auth().onAuthStateChanged(user => {
-      console.log(user);
-      if(user) {
-        this.isLogin = true;
-        this.userData = user;
-      } else {
-        this.isLogin = false;
-        this.userData = null;
-      };
-    });
-  },
+  // created: function() {
+  //   firebase.auth().onAuthStateChanged(user => {
+  //     console.log(user);
+  //     if(user) {
+  //       this.isLogin = true;
+  //       // this.userData = user;
+  //     } else {
+  //       this.isLogin = false;
+  //       // this.userData = null;
+  //     };
+  //   });
+  // },
   components: {
     'Home': Home,
     'Editor': Editor,
