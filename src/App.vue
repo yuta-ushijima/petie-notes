@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-      <Editor  v-if = "isLogin" :user="userData"></Editor>
-      <Home v-else ></Home>
-  </div>
+<div id="app">
+
+  <Editor v-if="isLogin" :user="userData"></Editor>
+  <Home v-else></Home>
+</div>
 </template>
 
 <script>
 import Home from './components/Home.vue';
 import Editor from './components/Editor.vue';
-
 export default {
   name: 'app',
-  data () {
+  data() {
     return {
       isLogin: false,
       userData: null,
@@ -20,7 +20,7 @@ export default {
   created: function() {
     firebase.auth().onAuthStateChanged(user => {
       console.log(user);
-      if(user) {
+      if (user) {
         this.isLogin = true;
         this.userData = user;
       } else {
@@ -35,6 +35,7 @@ export default {
   },
 }
 </script>
+
 
 <style lang="scss">
 
